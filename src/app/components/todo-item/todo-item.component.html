@@ -1,0 +1,9 @@
+<li>
+    <label>
+        <div *ngIf="todo.reminder; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><input type="checkbox" (change)="onUpdate(todo)" checked><i class="check-box"></i><span>{{todo.text}} - {{todo.day}}</span></ng-template>
+        <ng-template #elseBlock><input type="checkbox" (change)="onUpdate(todo)"><i class="check-box"></i><span>{{todo.text}} - {{todo.day}}</span></ng-template>
+        <app-fa-times (click)="onDelete(todo)"></app-fa-times>                
+        <app-fa-check (click)="onUpdate(todo)"></app-fa-check>        
+    </label>
+</li>

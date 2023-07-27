@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xl-8">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Todo List <span class="float-right"><app-button type="btn-primary" text="New Todo"></app-button></span></strong>
+            </div>
+            <div class="card-body">                
+                <div class="card-content">
+                    <div class="todo-list">
+                        <div class="tdl-holder">
+                            <div class="tdl-content">
+                                <ul>
+                                    <app-todo-item *ngFor="let todo of todos" [todo]="todo" (onDeleteTodo)="deleteTodo(todo)" 
+                                    (onUpdateTodo)="updateTodo(todo)"></app-todo-item>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- /.todo-list -->
+                </div>
+            </div> <!-- /.card-body -->
+        </div><!-- /.card -->
+    </div>
+</div>
+<app-addtodo (onAddTodo)="addTodo($event)"></app-addtodo>
